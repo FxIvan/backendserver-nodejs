@@ -1,17 +1,40 @@
 const { Router } = require('express')
 const router = Router()
 const formSchema = require('../models/formSchema')
-//process -> agarra parametro del que le pasamos a la terminal
-const nombre = process.argv[2]
 
 router.route('/')
 .post(async(req,res)=>{
-    const {frm_email, frm_fullname , frm_telehpone} = req.body
+    const {
+    frm_url,
+    frm_money,
+    frm_uala,
+    frm_mp,
+    frm_lc,
+    frm_cvu,
+    frm_namelast,
+    frm_number,  
+    frm_provincia,
+    frm_ciudad,
+    frm_dni,
+    frm_verifisi,
+    frm_verifino,
+    frm_amountservi} = req.body
 
     const dbForm = new formSchema({
-        name : frm_fullname,
-        email : frm_email,
-        telephone : frm_telehpone
+        frm_url,
+        frm_money,
+        frm_uala,
+        frm_mp,
+        frm_lc,
+        frm_cvu,
+        frm_namelast,
+        frm_number,  
+        frm_provincia,
+        frm_ciudad,
+        frm_dni,
+        frm_verifisi,
+        frm_verifino,
+        frm_amountservi
     })
 
     dbForm.save()

@@ -24,11 +24,11 @@ const qry_queryName = async() =>{
 
     if(salidaMP[0] === nombre){
         date.map(date => logHTTP.write( currentTime  + `: | MSG | El telefono del usuario ${date.name} es -> ${date.telephone} \n`))
-        process.kill(process.pid, 'SIGTERM')
+        //process.kill(process.pid, 'SIGTERM')
     }else{
         logHTTP.write( currentTime + `: | ERR | No se encontro el usuario ${nombre} \n`)
         logHTTP.write( currentTime + `: | ERR | ${err} \n`)
-        process.kill(process.pid, 'SIGTERM')
+        // process.kill(process.pid, 'SIGTERM')
     }
 
 })
