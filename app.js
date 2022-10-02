@@ -12,5 +12,6 @@ app.get('/', (req,res)=>{
 })
 
 app.use('/apidataform', require('./routes/formRoute'))
+app.use('/sendingdata/client' , require('./routes/dataRoute'))
 
 module.exports = app

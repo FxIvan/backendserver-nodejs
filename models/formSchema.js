@@ -15,9 +15,9 @@ const formData = new Schema({
     frm_verifisi:Boolean,
     frm_verifino:Boolean,
     frm_amountservi:Number,
-    date: { type: Date, default: Date.now },
+    date: { type: Date, default: Date.now }
 })
 
 const formSchema = model('formDataApi' , formData)
 
-module.exports = formSchema
+module.exports =  formSchema 
