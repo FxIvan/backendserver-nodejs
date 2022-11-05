@@ -15,7 +15,7 @@ router.route('/')
 
     newContactSchema.save()
     .then(()=>{
-        res.status(200).json({message:'Consulta enviada exitosamente', estado:'ok'})
+        res.status(200).json({message:'Consulta enviada exitosamente', estado='ok'})
     })
 })
 
