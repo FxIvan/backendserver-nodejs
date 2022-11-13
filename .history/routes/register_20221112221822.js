@@ -16,7 +16,7 @@ require('dotenv').config()
 
 router.route('/')
 .post(async(req,res)=>{
-    const { user , password , telefono } = req.body
+    const { user , password , telefono } = req.query
 
     let saltRounds = 12
 

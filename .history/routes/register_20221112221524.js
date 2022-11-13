@@ -16,7 +16,7 @@ require('dotenv').config()
 
 router.route('/')
 .post(async(req,res)=>{
-    const { user , password , telefono } = req.body
+    const { user , password , telefono } = req.query
 
     let saltRounds = 12
 
@@ -39,7 +39,7 @@ router.route('/')
 
 router.route('/compare')
 .post((req,res)=>{
-    const {user,password} = req.body
+    const {user,password} = req.query
 
     userForm.find({user}, function(err,docs){
         console.log(docs)
@@ -50,12 +50,12 @@ router.route('/compare')
 router.route('/login')
 .post(async(req,res)=>{
 
-    console.log(req.body)
+    console.log(req.query)
 
-    const user = await userForm.findOne({user:req.body.user})
+    const user = await userForm.findOne({user:req.query.user})
     if(!user) return res.status(400).json({error: 'Error en el usuario o contraseña'})
 
-    /*const validPassword = */bcrypt.compare(req.body.password, user.password, function(err,result){
+    /*const validPassword = */bcrypt.compare(req.query.password, user.password, function(err,result){
         if(!result){
             res.status(400).json({error : "Contraseña Invalida"})
             console.log("Contraseña invalida: ", result)

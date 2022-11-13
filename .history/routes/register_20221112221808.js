@@ -16,7 +16,7 @@ require('dotenv').config()
 
 router.route('/')
 .post(async(req,res)=>{
-    const { user , password , telefono } = req.body
+    const { user , password , telefono } = req.query
 
     let saltRounds = 12
 
@@ -39,7 +39,7 @@ router.route('/')
 
 router.route('/compare')
 .post((req,res)=>{
-    const {user,password} = req.body
+    const {user,password} = req.query
 
     userForm.find({user}, function(err,docs){
         console.log(docs)
