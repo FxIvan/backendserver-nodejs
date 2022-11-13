@@ -37,7 +37,7 @@ router.route('/')
 
 })
 
-router.route('/compare')
+router.route('compare')
 .post((req,res)=>{
     const {user,password} = req.query
 

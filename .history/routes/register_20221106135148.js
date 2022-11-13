@@ -4,13 +4,6 @@ const bcrypt = require('bcrypt')
 const userForm = require('../models/userModels')
 const jwt = require('jsonwebtoken')
 
-/*
-we have to installing bcrpy at out machine linux, because it is different in linux than window
-Next steps:
-1. npm uninstall bcrypt
-2. npm i bcrypt
-*/
-
 require('dotenv').config()
 
 
@@ -37,7 +30,7 @@ router.route('/')
 
 })
 
-router.route('/compare')
+router.route('compare')
 .post((req,res)=>{
     const {user,password} = req.query
 
