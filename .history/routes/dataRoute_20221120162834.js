@@ -5,7 +5,7 @@ const dataForm = require('../models/solicitudSchema')
 router.route('/')
     .get(async(req,res)=>{
         const datosForm = dataForm.find()
-        res.json(datosForm)
+        res.json({datosForm})
     })
     .post(async(req, res) => {
 

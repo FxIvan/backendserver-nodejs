@@ -4,8 +4,7 @@ const dataForm = require('../models/solicitudSchema')
 
 router.route('/')
     .get(async(req,res)=>{
-        const datosForm = dataForm.find()
-        res.json(datosForm)
+    res.send('Estas dentro de DataRout')
     })
     .post(async(req, res) => {
 
