@@ -49,4 +49,9 @@ router.route('/')
 
     })
 
+router.route('/delete-solicitud/:id')
+.delete(async(req,res)=>{
+    await dataForm.findByIdAndDelete(req.params.id)
+    res.json({message:'Email eliminado correctamente'})
+})
 module.exports = router
