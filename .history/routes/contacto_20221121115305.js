@@ -4,7 +4,7 @@ const contactSchema = require('../models/contactoSchema')
 
 router.route('/')
 .get(async(req,res)=>{
-    await contactSchema.find()
+    contactSchema.find()
     res.json({message:'contacto'})
 })
 .post(async(req,res)=>{

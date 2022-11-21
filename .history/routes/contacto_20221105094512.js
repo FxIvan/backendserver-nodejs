@@ -3,10 +3,6 @@ const router = Router()
 const contactSchema = require('../models/contactoSchema')
 
 router.route('/')
-.get(async(req,res)=>{
-    await contactSchema.find()
-    res.json({message:'contacto'})
-})
 .post(async(req,res)=>{
     const { frm_nombre , frm_cel , frm_email , frm_consulta } = req.body
 
